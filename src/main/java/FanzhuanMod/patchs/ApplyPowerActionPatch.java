@@ -1,4 +1,3 @@
-
 package FanzhuanMod.patchs;
 
 import FanzhuanMod.cardModifier.RandomStanceModifier;
@@ -7,9 +6,11 @@ import com.badlogic.gdx.graphics.g3d.particles.influencers.DynamicsModifier;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.events.shrines.FaceTrader;
+import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.relics.FaceOfCleric;
+import com.megacrit.cardcrawl.relics.GremlinMask;
+import com.megacrit.cardcrawl.relics.NlothsMask;
 import com.megacrit.cardcrawl.stances.CalmStance;
 
 @SpirePatch(clz = ApplyPowerAction.class, method = "update")
@@ -20,23 +21,23 @@ public class ApplyPowerActionPatch {
     )
 
     public static SpireReturn Insertfix(ApplyPowerAction action, @ByRef AbstractPower[] ___powerToApply) {
-        if(MyModConfig.EnableStrength)
+        if(MyModConfig.EnableYishang)
         {
             if( action.source!= AbstractDungeon.player)
             {return SpireReturn.Continue();}
-            if( action.target!=AbstractDungeon.player)
-            {return SpireReturn.Continue();}
-            if(___powerToApply[0] instanceof StrengthPower)
+            if(___powerToApply[0] instanceof VulnerablePower)
             {
-                ___powerToApply[0] = new DexterityPower(AbstractDungeon.player,___powerToApply[0].amount);
+                ___powerToApply[0] = new WeakPower(action.target, ___powerToApply[0].amount,false);
                 return SpireReturn.Continue();
             }
-            if(___powerToApply[0] instanceof DexterityPower)
+            if(___powerToApply[0] instanceof WeakPower)
             {
-                ___powerToApply[0] = new StrengthPower(AbstractDungeon.player,___powerToApply[0].amount);
+                ___powerToApply[0] = new VulnerablePower(action.target,___powerToApply[0].amount,false);
                 return SpireReturn.Continue();
             }
         }
+
+
         return SpireReturn.Continue();
     }
 

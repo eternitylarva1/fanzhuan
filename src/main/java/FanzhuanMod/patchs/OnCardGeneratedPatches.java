@@ -1,10 +1,7 @@
 package FanzhuanMod.patchs;
 
 
-import FanzhuanMod.cardModifier.CalmModifier;
-import FanzhuanMod.cardModifier.DarkModifier;
-import FanzhuanMod.cardModifier.LightningModifier;
-import FanzhuanMod.cardModifier.RandomStanceModifier;
+import FanzhuanMod.cardModifier.*;
 import FanzhuanMod.hook.MyModConfig;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -50,6 +47,8 @@ public class OnCardGeneratedPatches {
           CardModifierManager.addModifier(c,new DarkModifier()) ;
       if(MyModConfig.EnableLighting)
           CardModifierManager.addModifier(c,new LightningModifier()) ;
+      if(MyModConfig.EnableYishang)
+          CardModifierManager.addModifier(c,new YishangModifier()) ;
 
 
   }
