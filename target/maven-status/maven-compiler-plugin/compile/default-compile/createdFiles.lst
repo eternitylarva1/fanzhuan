@@ -14,6 +14,7 @@ FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyTheLibraryCards.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$RunModifierPatches.class
 FanzhuanMod\cards\Blizzard.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifySpawnedMasterDeckCards.class
+FanzhuanMod\patchs\ApplyPowerActionPatch.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyStarterCards.class
 FanzhuanMod\actions\FearNoEvilAction1.class
 FanzhuanMod\patchs\GetStancePatch.class
