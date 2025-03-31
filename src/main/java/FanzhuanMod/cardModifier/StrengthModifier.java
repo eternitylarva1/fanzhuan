@@ -17,12 +17,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-public class YishangModifier extends AbstractCardModifier {
-    public static String ID = ModHelper.makePath(YishangModifier.class.getSimpleName());
+public class StrengthModifier extends AbstractCardModifier {
+    public static String ID = ModHelper.makePath(StrengthModifier.class.getSimpleName());
     private static final UIStrings uiStrings;
 
 
-    public YishangModifier() {
+    public StrengthModifier() {
     }
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
           }
@@ -37,7 +37,7 @@ public class YishangModifier extends AbstractCardModifier {
     }
 
     public boolean shouldApply(AbstractCard card) {
-        return (card.rawDescription.contains(uiStrings.TEXT[2])||card.rawDescription.contains(uiStrings.TEXT[3]))&&!(CardModifierManager.hasModifier(card, ID))&&(card.rawDescription.contains(uiStrings.TEXT[0])||card.rawDescription.contains(uiStrings.TEXT[1]));
+        return (card.rawDescription.contains(uiStrings.TEXT[2]))&&!(CardModifierManager.hasModifier(card, ID))&&(card.rawDescription.contains(uiStrings.TEXT[0])||card.rawDescription.contains(uiStrings.TEXT[1]));
     }
 
     public void onInitialApplication(AbstractCard card) {
@@ -53,7 +53,7 @@ public class YishangModifier extends AbstractCardModifier {
     }
 
     public AbstractCardModifier makeCopy() {
-        return new YishangModifier();
+        return new StrengthModifier();
     }
 
     public String identifier(AbstractCard card) {

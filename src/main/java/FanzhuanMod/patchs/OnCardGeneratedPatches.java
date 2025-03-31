@@ -49,6 +49,8 @@ public class OnCardGeneratedPatches {
           CardModifierManager.addModifier(c,new LightningModifier()) ;
       if(MyModConfig.EnableYishang)
           CardModifierManager.addModifier(c,new YishangModifier()) ;
+      if(MyModConfig.EnableStrength)
+          CardModifierManager.addModifier(c,new StrengthModifier()) ;
 
 
   }

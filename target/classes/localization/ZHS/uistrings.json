@@ -28,7 +28,14 @@
   "TEXT": [
     "易伤",
     "虚弱",
-    "给予"
+    "给予",
+    "获得"
+  ]
+},"Fanzhuan:StrengthModifier": {
+  "TEXT": [
+    "力量",
+    "敏捷",
+    "获得"
   ]
 },"Fanzhuan:MyModConfig": {
   "TEXT_DICT": {
@@ -36,7 +43,8 @@
     "EnableDark": "允许将黑暗充能球和等离子充能球互相替换(重启后生效)",
     "EnableCalm": "允许将平静姿态和愤怒姿态互相替换(重启后生效)",
     "EnableRandomStance": "允许将退出当前姿态替换为进入随机姿态(重启后生效)",
-    "EnableYishang": "允许给予易伤和给予虚弱互相替换(重启后生效)"
+    "EnableYishang": "允许给予易伤和给予虚弱互相替换(重启后生效)",
+    "EnableStrength": "允许获得力量和获得敏捷互相替换(重启后生效)"
   }
 }
 

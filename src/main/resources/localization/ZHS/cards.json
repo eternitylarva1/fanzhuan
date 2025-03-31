@@ -1,3 +1,7 @@
 {
-  
+  "Limit Break": {
+    "NAME": "突破极限",
+    "DESCRIPTION": "将你的 敏捷 翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将你的 敏捷 翻倍。"
+  }
 }

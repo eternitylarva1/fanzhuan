@@ -35,6 +35,9 @@ public class ChangeOrbPatch {
     )
 
     public static void Insertfix(AbstractPlayer player, @ByRef AbstractOrb[] orbToSet) {
+        if(OrbAddFieldsPatch.HasChange.get(orbToSet[0])){
+            return;
+        }
       switch (orbToSet[0].ID){
           case Lightning.ORB_ID:
               if(MyModConfig.EnableLighting)
@@ -55,5 +58,6 @@ public class ChangeOrbPatch {
 
               break;
       }
+        OrbAddFieldsPatch.HasChange.set(orbToSet[0],true);
     }
 }

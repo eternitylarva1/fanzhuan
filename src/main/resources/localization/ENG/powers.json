@@ -1,14 +1,30 @@
 {
-  "ChouxiangRelic:NoBlockPower": {
-    "NAME": "Block to Metallization",
+  "Adaptation": {
+    "NAME": "Adaptation",
     "DESCRIPTIONS": [
-      "Halve block gained from cards and gain Metallization equal to the card's value."
+      "Whenever you enter #yCalm, draw #b",
+      " card(s).",
+      " card(s)."
     ]
   },
-  "ChouxiangRelic:NoDamagePower": {
-    "NAME": "Attack to Thorns",
+  "WrathNextTurnPower": {
+    "NAME": "WrathNextTurnPower",
     "DESCRIPTIONS": [
-      "Do not deal attack damage from cards; instead gain half Thorns equal to the card's damage."
+      "Enter #yCalm at the start of your turn."
+    ]
+  },
+  "LikeWaterPower": {
+    "NAME": "LikeWaterPower",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you are in #yAnger, gain #b",
+      " #yBlock."
+    ]
+  },
+  "StaticDischarge": {
+    "NAME": "StaticDischarge",
+    "DESCRIPTIONS": [
+      "When you take #yAttack damage, #ygenerate #b",
+      " #yFrost Energy Orb(s)."
     ]
   }
 }

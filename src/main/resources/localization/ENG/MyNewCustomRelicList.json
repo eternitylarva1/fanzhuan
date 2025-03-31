@@ -1,72 +1,75 @@
 {
-  "ChouxiangRelic:tanlan": {
-    "NAME": "Greedy Gold",
-    "FLAVOR": "My money isn't for you!",
+  "TeardropLocket": {
+    "NAME": "Teardrop Locket",
+    "FLAVOR": "The owner of the locket was blind, and its contents remain a mystery.",
     "DESCRIPTIONS": [
-      "Gain 9999 Gold when picked up. Can only spend once per shop."
+      "Starts each battle in #yAnger."
     ]
   },
-  "ChouxiangRelic:chuncui": {
-    "NAME": "Pure Strength",
-    "FLAVOR": "Wouldn't it be nice if there was a card that both blocks and deals damage...",
+  "FrozenCore": {
+    "NAME": "Frozen Core",
+    "FLAVOR": "A pulsing icy energy fills the cracks in your core.",
     "DESCRIPTIONS": [
-      "Gain 50 Strength and 50 Dexterity at battle start. Can play at most 1 card per turn."
+      "Replaces #rCracked Core. If you have empty energy orb slots at the end of your turn, #ygenerate #b1 #yLightning Energy Orb."
     ]
   },
-  "ChouxiangRelic:dengyideng": {
-    "NAME": "Wait a Second",
-    "FLAVOR": "Your run took 3 hours?",
+  "SymbioticVirus": {
+    "NAME": "Symbiotic Virus",
+    "FLAVOR": "Small nuisance, big benefits...",
     "DESCRIPTIONS": [
-      "Wait 5 minutes in normal battles; 15 minutes in elite battles; 30 minutes in boss battles; 60 minutes in final battles to eliminate all enemies."
+      "At the start of each battle, #ygenerate #b1 #yPlasma Energy Orb."
     ]
   },
-  "ChouxiangRelic:kuangwang": {
-    "NAME": "Arrogant Flame",
-    "FLAVOR": "Defeat 16 elites.",
+  "CrackedCore": {
+    "NAME": "Cracked Core",
+    "FLAVOR": "The mysterious life source found in all automata of the Spire - this one seems slightly damaged.",
     "DESCRIPTIONS": [
-      "Gain Red Key when picked up. All subsequent campfires become elites with fire. Randomly strike a card and restore 20% HP after defeating elites."
+      "At the start of each battle, #ygenerate #b1 #yFrost Energy Orb."
     ]
   },
-  "ChouxiangRelic:weixianbaoxiang": {
-    "NAME": "Dangerous Chest",
-    "FLAVOR": "You really love chests, don't you?",
+  "NuclearBattery": {
+    "NAME": "Nuclear Battery",
+    "FLAVOR": "Whoa...",
     "DESCRIPTIONS": [
-      "All normal enemies become chest rooms. All question marks become elites with fire."
+      "At the start of each battle, #ygenerate #b1 #yDark Energy Orb."
     ]
   },
-  "ChouxiangRelic:liliangdaijia": {
-    "NAME": "liliangdaijia",
-    "FLAVOR": "Where are my cards?!",
+  "RedMask": {
+    "NAME": "Red Mask",
+    "FLAVOR": "This stylish mask belongs to the leader of the Red Mask Bandits - does that make you their new boss now?",
     "DESCRIPTIONS": [
-      "Gain 15 Strength, Dexterity, and Focus at battle start. Cannot shuffle your deck."
+      "At the start of each battle, apply #b",
+      " stacks of #yVulnerable to all enemies."
     ]
   },
-  "ChouxiangRelic:dangao": {
-    "NAME": "Delicious Cake",
-    "FLAVOR": "So delicious you never want to eat anything else.",
+  "GremlinMask": {
+    "NAME": "Gremlin Mask",
+    "FLAVOR": "Ugh, I just want to run away.",
     "DESCRIPTIONS": [
-      "Gain 150 Max HP when picked up. Cannot restore health anymore."
+      "At the start of each battle, you have #b1 stack of #yVulnerable."
     ]
   },
-  "ChouxiangRelic:gangtiehexin": {
-    "NAME": "Iron Core",
-    "FLAVOR": "Defense is everything!",
+  "ChampionBelt": {
+    "NAME": "Champion Belt",
+    "FLAVOR": "Only the strongest deserve to wear this belt.",
     "DESCRIPTIONS": [
-      "Halve block gained from cards and gain equal Metallization. Convert attack damage dealt into half Thorns."
+      "Whenever you apply #yVulnerable, also apply #b",
+      " stacks of #yWeak."
     ]
   },
-  "ChouxiangRelic:aoman": {
-    "NAME": "Proof of Arrogance",
-    "FLAVOR": "A pile of relics is better than one... right?",
+  "BagofMarbles": {
+    "NAME": "Bag of Marbles",
+    "FLAVOR": "Once a popular toy in the City District, now you can use it to unbalance enemies.",
     "DESCRIPTIONS": [
-      "Gain all original boss relics when picked up. NL Do not obtain via loadout or you will be unable to move. Use console."
+      "At the start of each battle, apply #b",
+      " stacks of #yWeak to all enemies."
     ]
   },
-  "ChouxiangRelic:chenghuacheng": {
-    "NAME": "Ashes to Ashes",
-    "FLAVOR": "What do I play when my deck is gone?",
+  "HandDrill": {
+    "NAME": "Hand Drill",
+    "FLAVOR": "Screw attacks are super dangerous,",
     "DESCRIPTIONS": [
-      "Convert all cards in your #ydeck#! to 0 cost, #yEthereal#, #yExhaust# when picked up. (Does not affect copy cards)"
+      "Whenever you break an enemy's #yBlock, apply #b2 stacks of #yWeak."
     ]
   }
 }

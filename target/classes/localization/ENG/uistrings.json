@@ -1,22 +1,57 @@
 {
-  "ChouxiangRelic:compoundeffect": {
+  "Fanzhuan:CalmModifier": {
     "TEXT": [
-      "Cards become 0 cost"
+      "Calm",
+      "Anger"
     ]
   },
-  "ChouxiangRelic:MetalModifier": {
+  "Fanzhuan:RandomStanceModifier": {
     "TEXT": [
-      " NL Gain !B! Metallization ",
-      "Block",
-      "Metallization"
+      "Exit current",
+      "Enter random"
     ]
   },
-  "ChouxiangRelic:ThronsModifier": {
+  "Fanzhuan:StartModifier": {
     "TEXT": [
-      "Damage",
-      "Thorns",
-      "Deal",
+      "Start",
+      "End"
+    ]
+  },
+  "Fanzhuan:LightningModifier": {
+    "TEXT": [
+      "Lightning",
+      "Frost"
+    ]
+  },
+  "Fanzhuan:DarkModifier": {
+    "TEXT": [
+      "Dark",
+      "Plasma"
+    ]
+  },
+  "Fanzhuan:YishangModifier": {
+    "TEXT": [
+      "Vulnerable",
+      "Weak",
+      "Apply",
       "Gain"
     ]
+  },
+  "Fanzhuan:StrengthModifier": {
+    "TEXT": [
+      "Strength",
+      "Dexterity",
+      "Gain"
+    ]
+  },
+  "Fanzhuan:MyModConfig": {
+    "TEXT_DICT": {
+      "EnableLighting": "Allow Lightning and Frost Energy Orbs to replace each other (requires restart)",
+      "EnableDark": "Allow Dark and Plasma Energy Orbs to replace each other (requires restart)",
+      "EnableCalm": "Allow Calm and Anger stances to replace each other (requires restart)",
+      "EnableRandomStance": "Allow exiting current stance to be replaced by entering random stance (requires restart)",
+      "EnableYishang": "Allow applying Vulnerable and applying Weak to replace each other (requires restart)",
+      "EnableStrength": "Allow gaining Strength and gaining Dexterity to replace each other (requires restart)"
+    }
   }
 }

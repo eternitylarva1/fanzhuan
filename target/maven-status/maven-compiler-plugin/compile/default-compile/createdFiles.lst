@@ -25,10 +25,12 @@ FanzhuanMod\patchs\InterruptUseCardFieldPatches$MakeStatEquivalentCopy.class
 FanzhuanMod\cardModifier\StartModifier.class
 FanzhuanMod\patchs\InterruptUseCardFieldPatches.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$CopiesMadeAreFinal.class
+FanzhuanMod\cardModifier\StrengthModifier.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyTheLibraryCards$Locator.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$DraftFix.class
 FanzhuanMod\config\RelicConfig.class
 FanzhuanMod\cardModifier\RandomStanceModifier.class
+FanzhuanMod\patchs\OrbAddFieldsPatch.class
 FanzhuanMod\actions\DarkImpulseAction.class
 FanzhuanMod\cards\ThunderStrike.class
 FanzhuanMod\helpers\ModHelper.class
@@ -44,6 +46,7 @@ FanzhuanMod\cards\EmptyFist.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyRewardScreenStuff.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyShopCards.class
 FanzhuanMod\patchs\OnCardGeneratedPatches.class
+FanzhuanMod\patchs\LimitBreakPatch.class
 FanzhuanMod\utils\Invoker.class
 FanzhuanMod\cards\EmptyMind.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifyNeowRewardColorlessCardsPatch.class
