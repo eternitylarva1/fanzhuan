@@ -10,8 +10,10 @@ package FanzhuanMod.cardModifier;
 
 import FanzhuanMod.helpers.ModHelper;
 import FanzhuanMod.patchs.InterruptUseCardFieldPatches;
+import FanzhuanMod.utils.TextureHueShiftUtils;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

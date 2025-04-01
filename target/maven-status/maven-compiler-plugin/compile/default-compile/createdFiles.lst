@@ -38,6 +38,7 @@ FanzhuanMod\patchs\OnCardGeneratedPatches$RunModifierPatches$AddedLocator.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$RunModifierPatches$FastObtainLocator.class
 FanzhuanMod\patchs\CardLibraryPatch.class
 FanzhuanMod\patchs\CalmPatch.class
+FanzhuanMod\utils\TextureHueShiftUtils.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$DiscoveryStyleCards.class
 FanzhuanMod\cardModifier\DarkModifier.class
 FanzhuanMod\patchs\OnCardGeneratedPatches$ModifySpawnedColorlessCardsPatch.class

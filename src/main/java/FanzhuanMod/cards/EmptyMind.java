@@ -45,7 +45,7 @@ public class EmptyMind extends AbstractCard {
         String[] temp={"Calm","Wrath","Divinity"};
         String currentStance = p.stance.ID;
         if(MyModConfig.EnableRandomStance) {
-            ArrayList<String> availableStances = new ArrayList<>(Arrays.asList("Calm", "Wrath", "Divinity"));
+            ArrayList<String> availableStances = new ArrayList<>(Arrays.asList("Calm", "Wrath"));
 // 排除当前架势
             availableStances.remove(currentStance);
             String as = availableStances.get((int) AbstractDungeon.cardRandomRng.random(availableStances.size() - 1));
