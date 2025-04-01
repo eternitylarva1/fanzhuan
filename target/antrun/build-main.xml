@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy file="target/ChouXiangRelic.jar" tofile="C:\Program Files (x86)\steam\steamapps/common/SlayTheSpire/mods/ChouXiangRelic.jar"/>
+  <copy file="target/Souldeck.jar" tofile="C:\Program Files (x86)\steam\steamapps/common/SlayTheSpire/mods/Souldeck.jar"/>
 </target>
 </project>

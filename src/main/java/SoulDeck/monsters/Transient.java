@@ -5,6 +5,7 @@ package SoulDeck.monsters;//
 
 
 
+import SoulDeck.relic.SoulDeck;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
@@ -45,7 +46,7 @@ public class Transient extends AbstractMonster {
       this(999);
     }
     public Transient(int amount) {
-        super("影魔", "Transient", 50+(20-amount)*5, 0.0F, -15.0F, 270, 240.0F, (String)null, 0.0F, 20.0F);
+        super("影魔", "Transient", 99, 0.0F, -15.0F, 270, 240.0F, (String)null, 0.0F, 20.0F);
         this.loadAnimation("images/monsters/theForest/transient/skeleton.atlas", "images/monsters/theForest/transient/skeleton.json", 1.5F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -54,13 +55,13 @@ public class Transient extends AbstractMonster {
         this.dialogY -= 20.0F * Settings.scale;
         int increase=(20-amount)*2;
         if (AbstractDungeon.ascensionLevel >= 2) {
-            this.startingDeathDmg = 10;
+            this.startingDeathDmg = (int) (amount*0.15+10);
         } else {
-            this.startingDeathDmg = 15;
+            this.startingDeathDmg = (int) (amount*0.15+10);
         }
 
-        for(int i=0;i<7;i++){
-            this.damage.add(new DamageInfo((AbstractCreature) this, (int) (this.startingDeathDmg+(increase*2*pow(1.15, i)-increase*2))));
+        for(int i=0;i<15;i++){
+            this.damage.add(new DamageInfo((AbstractCreature) this, (int) (this.startingDeathDmg+10*i)));
         }
     }
 
@@ -78,8 +79,23 @@ public class Transient extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new WaitAction(0.4F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
                 ++this.count;
-                this.setMove((byte)1, Intent.ATTACK, this.damage.get(this.count).base);
+                if(count<5) {
+                    this.setMove((byte) 1, Intent.ATTACK, this.damage.get(this.count).base);
+                }
+                else {
+                    this.setMove((byte) 2, Intent.ATTACK, this.damage.get(this.count).base,2,true);
+                }
+                break;
+            case 2:
+                AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ATTACK"));
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(0.4F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
+                ++this.count;
+                this.setMove((byte) 2, Intent.ATTACK, this.damage.get(this.count).base,2,true);
             default:
+
+
         }
     }
 
@@ -103,6 +119,10 @@ public class Transient extends AbstractMonster {
 
     public void die() {
         super.die();
+        if(AbstractDungeon.player.hasRelic(SoulDeck.ID)){
+            SoulDeck soulDeck = (SoulDeck) AbstractDungeon.player.getRelic(SoulDeck.ID);
+            soulDeck.counter+=2;
+        }
         UnlockTracker.unlockAchievement("TRANSIENT");
     }
 

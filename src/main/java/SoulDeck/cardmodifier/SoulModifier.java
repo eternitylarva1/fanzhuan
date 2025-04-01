@@ -16,11 +16,12 @@ public class SoulModifier extends AbstractCardModifier {
     // 修改描述
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
+
         return String.format(STRINGS.TEXT[0], rawDescription);
     }
-
+    @Override
     public boolean  shouldApply(AbstractCard card) {
-        return !SoulboundField.soulbound.get(card) || CardModifierManager.hasModifier(card, this.identifier(card));
+        return !SoulboundField.soulbound.get(card)&&!CardModifierManager.hasModifier(card,ID);
     }
 
 
@@ -34,6 +35,7 @@ public class SoulModifier extends AbstractCardModifier {
     }
     @Override
     public String modifyName(String name, AbstractCard card) {
+
         return String.format(STRINGS.TEXT[1], name);
     }
 
