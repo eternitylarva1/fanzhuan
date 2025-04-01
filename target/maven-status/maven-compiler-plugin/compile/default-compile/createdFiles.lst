@@ -1,5 +1,6 @@
-cn\candy\relic\aoman.class
-cn\candy\relic\dangao.class
-cn\candy\helpers\ModHelper.class
-cn\candy\hook\LoadMySpireMod.class
-cn\candy\config\RelicConfig.class
+SoulDeck\monsters\Transient.class
+SoulDeck\relic\SoulDeck.class
+SoulDeck\hook\LoadMySpireMod.class
+SoulDeck\cardmodifier\SoulModifier.class
+SoulDeck\helpers\ModHelper.class
+SoulDeck\config\RelicConfig.class

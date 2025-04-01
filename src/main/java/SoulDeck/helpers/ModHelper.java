@@ -1,7 +1,7 @@
-package cn.candy.helpers;
+package SoulDeck.helpers;
 
 public class ModHelper {
     public static String makePath(String id) {
-        return "ChouxiangRelic:" + id;
+        return "SoulDeck:" + id;
     }
 }

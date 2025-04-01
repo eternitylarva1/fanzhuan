@@ -1,12 +1,4 @@
 {
-  "Eruption": {
-    "NAME": "暴怒",
-    "DESCRIPTION": "造成 !D! 点伤害。 生成一个 愤怒 充能球 "
-  },
-  "Vigilance": {
-    "NAME": "警惕",
-    "DESCRIPTION": "获得 !B! 点 格挡 。生成一个 平静 充能球 ",
-    "UPGRADE_DESCRIPTION": "DEPRECATED"
-  }
+
 
 }

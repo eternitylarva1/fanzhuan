@@ -1,42 +1,12 @@
 {
-  "ChouxiangRelic:tanlan": {
-"NAME": "贪婪金币",
+  "SoulDeck:SoulDeck": {
+"NAME": "灵魂牌堆",
 "FLAVOR": "我的钱才不会给你呢！",
 "DESCRIPTIONS": [
-"拾取时获得9999金币。每次你在商店购买遗物时，只能购买一件。"]
-},"ChouxiangRelic:chuncui": {
-"NAME": "纯粹力量",
-"FLAVOR": "如果有一张牌既能起甲又能打伤害就好了……",
-"DESCRIPTIONS": [
-"战斗开始时获得99力量，99敏捷，44集中。每回合最多打出1张牌。"]
-},"ChouxiangRelic:dengyideng": {
-"NAME": "等一等",
-"FLAVOR": "你这局打了3个小时？",
-"DESCRIPTIONS": [
-"普通战等待5分钟;精英战等待15分钟;BOSS战等待30分钟;终幕战等待60分钟后，消灭所有敌人。"]
-},"ChouxiangRelic:kuangwang": {
-"NAME": "狂妄之火",
-"FLAVOR": "战胜精英:16个。",
-"DESCRIPTIONS": [
-"所有火堆变为强化精英。击败精英后随机敲一张牌，回复20血"]
-},
-  "ChouxiangRelic:dangao": {
-"NAME": "美味蛋糕",
-"FLAVOR": "太好吃了，导致你再也不想吃别的东西了。",
-"DESCRIPTIONS": [
-"拾取时获得150血量上限。你无法再回复生命。"]
-},"ChouxiangRelic:gangtiehexin": {
-"NAME": "钢铁核心",
-"FLAVOR": "防御大于一切!",
-"DESCRIPTIONS": [
-"获得格挡时改为获得等量金属化;造成伤害时改为获得等量荆棘。"]
-},"ChouxiangRelic:aoman": {
-"NAME": "傲慢之证",
-"FLAVOR": "一大堆遗物总比一个好……吧?",
-"DESCRIPTIONS": [
-"拾取时获得所有BOSS遗物。"]
+"非战斗中,右键遗物主动使用,消耗一点 souldeck:计数 ,从三张随机牌中选择并获得一张牌(灵魂绑定且无法跳过)",
+"选择并获得一张卡牌"
+]
 }
-
 }
 
 

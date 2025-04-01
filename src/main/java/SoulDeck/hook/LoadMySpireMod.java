@@ -1,19 +1,25 @@
-package cn.candy.hook;
+package SoulDeck.hook;
 
+import SoulDeck.relic.SoulDeck;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostDungeonInitializeSubscriber;
-import cn.candy.relic.aoman;
+import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.nio.charset.StandardCharsets;
+
+import static com.megacrit.cardcrawl.core.Settings.language;
 
 /**
  * 加载遗物 用于在游戏中注入你修改的内容
@@ -23,7 +29,7 @@ import org.apache.logging.log4j.Logger;
  **/
 @SpireInitializer
 @SuppressWarnings("unused")
-public class LoadMySpireMod implements PostDungeonInitializeSubscriber, EditRelicsSubscriber, EditStringsSubscriber {
+public class LoadMySpireMod implements EditKeywordsSubscriber,PostInitializeSubscriber,PostDungeonInitializeSubscriber, EditRelicsSubscriber, EditStringsSubscriber {
     /**
      * 日志对象 用来输出日志 指定本类 LoadMyEasyMod 以确认日志的输出对象
      */
@@ -44,7 +50,7 @@ public class LoadMySpireMod implements PostDungeonInitializeSubscriber, EditReli
     public void receivePostDungeonInitialize() {
         logger.info(">>>初始化开始<<<");
         //给人物添加遗物
-        tryGetRelic(new aoman());
+        tryGetRelic(new SoulDeck());
         logger.info(">>>初始化完成<<<");
     }
     
@@ -54,8 +60,8 @@ public class LoadMySpireMod implements PostDungeonInitializeSubscriber, EditReli
     @Override
     public void receiveEditRelics() {
         logger.info(">>>尝试在游戏中加载自定义遗物属性开始<<<");
-        logger.info(">>>尝试在游戏中加载【{}】遗物数据<<<", aoman.ID);
-        BaseMod.addRelic(new aoman(), RelicType.SHARED);
+        logger.info(">>>尝试在游戏中加载【{}】遗物数据<<<", SoulDeck.ID);
+        BaseMod.addRelic(new SoulDeck(), RelicType.SHARED);
         logger.info(">>>尝试在游戏中加载自定义遗物属性完毕<<<");
     }
     
@@ -67,6 +73,7 @@ public class LoadMySpireMod implements PostDungeonInitializeSubscriber, EditReli
 
         receiveJson("遗物", "MyNewCustomRelicList.json", RelicStrings.class);
         receiveJson("卡牌", "cards.json", CardStrings.class);
+        receiveJson("ui", "uistrings.json", UIStrings.class);
     }
     
     /**
@@ -92,8 +99,32 @@ public class LoadMySpireMod implements PostDungeonInitializeSubscriber, EditReli
         if (!AbstractDungeon.player.hasRelic(customRelic.relicId)) {
             logger.info(">>>人物没有遗物【{}】,尝试给人物添加遗物【{}】<<<", customRelic.relicId, customRelic.relicId);
             int slot = AbstractDungeon.player.getRelicNames().size();
-           // customRelic.instantObtain(AbstractDungeon.player, slot, false);
+            customRelic.instantObtain(AbstractDungeon.player, slot, false);
             logger.info(">>>尝试给人物添加遗物【{}】成功<<<", customRelic.relicId);
+        }
+    }
+
+    @Override
+    public void receivePostInitialize() {
+
+    }
+
+    @Override
+    public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String lang = "eng";
+        if (language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
+        }
+
+        String json = Gdx.files.internal("localization/keywords.json")
+                .readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                // 这个id要全小写
+                BaseMod.addKeyword("souldeck", keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+            }
         }
     }
 }

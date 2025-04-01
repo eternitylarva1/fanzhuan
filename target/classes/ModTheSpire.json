@@ -1,11 +1,12 @@
 {
-  "modid": "ChouxiangRelic",
-  "name": "抽象遗物",
+  "modid": "SoulDeck",
+  "name": "灵魂牌堆",
   "author_list": [
-    "buxi"
+    "Dieyou"
   ],
-  "description": "新手简单mod",
+  "description": "新增遗物灵魂牌堆",
   "version": "1.0.0",
   "sts_version": "01-01-2020",
-  "mts_version": "1.0.0"
+  "mts_version": "1.0.0",
+  "dependencies": ["basemod","stslib"]
 }
