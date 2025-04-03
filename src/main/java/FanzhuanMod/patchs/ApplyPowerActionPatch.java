@@ -38,7 +38,7 @@ public class ApplyPowerActionPatch {
                 return SpireReturn.Continue();
             }
         }
-        if(MyModConfig.EnableStrength)
+        if(MyModConfig.EnableStrength&&___powerToApply[0].amount>0)
         {
             if(___powerToApply[0] instanceof StrengthPower)
             {

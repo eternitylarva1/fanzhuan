@@ -13,4 +13,5 @@ public class MyModConfig extends EasyConfigPanel {
     public static boolean EnableRandomStance = true;
     public static boolean EnableYishang = true;
     public static boolean EnableStrength = true;
+    public static boolean EnableShenge = false;
 }

@@ -46,6 +46,9 @@ public class EmptyFist extends AbstractCard {
         if(MyModConfig.EnableRandomStance) {
             ArrayList<String> availableStances = new ArrayList<>(Arrays.asList("Calm", "Wrath"));
 // 排除当前架势
+            if(MyModConfig.EnableShenge){
+                availableStances.add("Divinity");
+            }
             availableStances.remove(currentStance);
             String as = availableStances.get((int) AbstractDungeon.cardRandomRng.random(availableStances.size() - 1));
             this.addToBot(new NotStanceCheckAction(as, new VFXAction(new EmptyStanceEffect(p.hb.cX, p.hb.cY), 0.1F)));
