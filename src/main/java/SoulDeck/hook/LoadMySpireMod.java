@@ -72,7 +72,7 @@ public class LoadMySpireMod implements EditKeywordsSubscriber,PostInitializeSubs
     public void receiveEditStrings() {
 
         receiveJson("遗物", "MyNewCustomRelicList.json", RelicStrings.class);
-        receiveJson("卡牌", "cards.json", CardStrings.class);
+
         receiveJson("ui", "uistrings.json", UIStrings.class);
     }
     

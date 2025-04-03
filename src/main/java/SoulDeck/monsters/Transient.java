@@ -13,12 +13,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.city.MaskedBandits;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
@@ -79,22 +81,8 @@ public class Transient extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new WaitAction(0.4F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
                 ++this.count;
-                if(count<5) {
-                    this.setMove((byte) 1, Intent.ATTACK, this.damage.get(this.count).base);
-                }
-                else {
-                    this.setMove((byte) 2, Intent.ATTACK, this.damage.get(this.count).base,2,true);
-                }
-                break;
-            case 2:
-                AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ATTACK"));
-                AbstractDungeon.actionManager.addToBottom(new WaitAction(0.4F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(this.count), AttackEffect.BLUNT_HEAVY));
-                ++this.count;
-                this.setMove((byte) 2, Intent.ATTACK, this.damage.get(this.count).base,2,true);
-            default:
 
+                    this.setMove((byte) 1, Intent.ATTACK, this.damage.get(this.count).base);
 
         }
     }

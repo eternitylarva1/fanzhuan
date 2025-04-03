@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.TheLibrary;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
@@ -59,6 +60,10 @@ public class SoulDeck extends CustomRelic implements ClickableRelic {
 
         super(ID, new Texture(Gdx.files.internal("images/relics/souldeck.png")), RelicTier.SPECIAL, LandingSound.CLINK);
         this.counter=1;
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip("灵魂密语","战斗，燃烧，杀戮尖塔！ NL 唤醒： #g收集灵魂，诅咒之路 NL 强化： #b明耀擢升，黑暗低语。 NL 限制： #y燃烧魂火，力量释放。 NL 失控： #r邪恶缠身，深渊乱战。"));
+        this.initializeTips();
     }
     private CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
 
@@ -148,7 +153,7 @@ public class SoulDeck extends CustomRelic implements ClickableRelic {
                 transientMonster.usePreBattleAction();
                 transientMonster.drawX = AbstractDungeon.getCurrRoom().monsters.monsters.get(0).drawX - Settings.WIDTH / 10.0F;
                 transientMonster.drawY = AbstractDungeon.getCurrRoom().monsters.monsters.get(0).drawY + Settings.HEIGHT / 10.0F;
-                this.addToBot(new SpawnMonsterAction(transientMonster, true));
+                this.addToBot(new SpawnMonsterAction(transientMonster, false));
             }
             if(AbstractDungeon.cardRandomRng.randomBoolean((float) this.counter /100)) {
                 for(int i = 0; i < 3; ++i) {
